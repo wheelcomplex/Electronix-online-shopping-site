@@ -1,5 +1,5 @@
 <?php
 
-$con = mysqli_connect("localhost","root","","electronix");
+require_once __DIR__ . '/../includes/db.php';
 
 ?>

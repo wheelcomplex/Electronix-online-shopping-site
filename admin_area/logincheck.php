@@ -1,44 +1,26 @@
 <?php
 
+if (!isset($_POST["text1"])) {
+    header("location:login.html");
+} else {
 
+    require_once __DIR__ . '/../includes/db.php';
 
-if(!isset($_POST["text1"]))
-{
-	header("location:login.html");
-}
+    $uid = $_POST["text1"];
+    $pwd = $_POST["password1"];
 
-else
-{
+    $qry = "select * from ad_log where aname='$uid' and apwd='$pwd'";
 
- $con = mysqli_connect("localhost","root","","electronix");
+    $result = mysqli_query($con, $qry);
 
- if(mysqli_connect_errno()){
-  
-  echo"Failed to connect : " . mysqli_connect_error(); 
-  
-}
+    $n = mysqli_num_rows($result);
 
-$uid=$_POST["text1"];
-$pwd=$_POST["password1"];
+    if ($n > 0) {
+        header("location:index.php?tn=$uid");
 
-$qry="select * from ad_log where aname='$uid' and apwd='$pwd'";
-
-$result=mysqli_query($con,$qry);
-
-$n=mysqli_num_rows($result);
-
-
-if($n>0)
-{
-    header("location:index.php?tn=$uid");
-    
-}
-
-else
-{
-	echo "<script>alert('Email or password is incorrect!')</script>";
-	 echo "<script>window.open('login.html','_self')</script>";
-}
+    } else {
+        echo "<script>alert('Email or password is incorrect!')</script>";
+        echo "<script>window.open('login.html','_self')</script>";
+    }
 
 }
-?>

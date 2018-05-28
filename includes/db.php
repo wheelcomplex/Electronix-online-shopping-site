@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost","root","","electronix");
+$con = mysqli_connect("localhost","yinj19","05101975","yinj19mysql2");
 
 if(mysqli_connect_errno()){
 	

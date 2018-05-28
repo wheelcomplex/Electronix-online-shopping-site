@@ -1,17 +1,18 @@
 /*
 SQLyog - Free MySQL GUI v5.17
-Host - 5.5.24-log : Database - electronix
+Host - 5.5.24-log : Database - yinj19mysql2
 *********************************************************************
 Server version : 5.5.24-log
-*/
+*/
+
 
 SET NAMES utf8;
 
 SET SQL_MODE='';
 
-create database if not exists `electronix`;
+create database if not exists `yinj19mysql2`;
 
-USE `electronix`;
+USE `yinj19mysql2`;
 
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
@@ -31,7 +32,7 @@ CREATE TABLE `ad_log` (
 
 /*Data for the table `ad_log` */
 
-insert into `ad_log` (`id`,`aname`,`apwd`,`secques`) values (1,'electronixadmin','12345678','dreaming');
+insert into `ad_log` (`id`,`aname`,`apwd`,`secques`) values (1,'yinj19mysql2admin','12345678','dreaming');
 
 /*Table structure for table `brands` */
 
